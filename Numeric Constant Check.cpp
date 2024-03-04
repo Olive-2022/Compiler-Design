@@ -1,22 +1,34 @@
 #include <iostream>
 #include <string>
+
+
 using namespace std;
 
-bool isNumericConstant(const string& input) {
-    for (char c : input) {
-        if (!isdigit(c) && c != '.') {
+bool isNumericConstant(const string& input)
+{
+    for (char c : input)
+    {
+        if (!isdigit(c))
+        {
             return false;
         }
     }
     return true;
 }
 
-int main() {
-    string userInput;
-    cout << "Enter a numeric value: ";
-    getline(std::cin, userInput);
+int main()
+{
+    string input;
+    cout << "Enter input: ";
+    cin >> input;
 
-    cout << (isNumericConstant(userInput) ? "Numeric Constant" : "Not a Numeric Constant") <<endl;
+    if (isNumericConstant(input))
+    {
+        cout << "Numeric constant" << endl;
+    } else
+    {
+        cout << "Not numeric" << endl;
+    }
 
     return 0;
 }
